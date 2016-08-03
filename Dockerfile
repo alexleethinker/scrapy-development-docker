@@ -3,10 +3,20 @@
 # Based on Ubuntu Image
 ############################################################
 
-FROM ubuntu
-MAINTAINER NeuralFoundry <neuralfoundry.com>
+FROM ubuntu:14.04
+MAINTAINER frank <me@lijingpeng.org>
 
-RUN echo deb http://archive.ubuntu.com/ubuntu precise universe >> /etc/apt/sources.list
+# RUN echo deb http://mirrors.aliyun.com/ubuntu trusty universe >> /etc/apt/sources.list
+RUN echo deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse >> /etc/apt/sources.list
+RUN echo deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse >> /etc/apt/sources.list
+RUN echo deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse >> /etc/apt/sources.list
+RUN echo deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse >> /etc/apt/sources.list
+RUN echo deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse >> /etc/apt/sources.list
+RUN echo deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse >> /etc/apt/sources.list
+RUN echo deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse >> /etc/apt/sources.list
+RUN echo deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse >> /etc/apt/sources.list
+RUN echo deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse >> /etc/apt/sources.list
+RUN echo deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse >> /etc/apt/sources.list
 RUN apt-get update
 
 ## Python Family
